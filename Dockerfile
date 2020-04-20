@@ -52,6 +52,7 @@ RUN curl -sS https://getcomposer.org/installer | \
   php -- --version=1.9.0 --install-dir=/usr/local/bin --filename=composer
 
 COPY ./conf/www.conf /usr/local/etc/php-fpm.d/
+COPY ./src/*.php /var/www/html/
 RUN rm /usr/local/etc/php-fpm.d/zz-docker.conf
 
 RUN mkdir -p /etc/nginx/html /var/www/html /sock \
@@ -62,7 +63,6 @@ USER app:app
 VOLUME /var/www
 
 WORKDIR /var/www/html
-COPY ./src/*.php .
 
 CMD ["php-fpm"]
 
