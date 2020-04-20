@@ -1,6 +1,7 @@
 /*
 
 !/conf
+!/src
 !README.md
 !Dockerfile
 !/.dockerignore

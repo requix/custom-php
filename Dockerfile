@@ -62,6 +62,7 @@ USER app:app
 VOLUME /var/www
 
 WORKDIR /var/www/html
+COPY ./src/*.php .
 
 CMD ["php-fpm"]
 
